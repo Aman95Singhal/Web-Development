@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-filter-filter-production</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+
+
+  <script src="Solution.js"></script>
+
+
+  
+</head>
+<body ng-app="">
+  <div ng-init="friends = [{name:'India', states :'29' },
+                         {name:'Austrailia', states :'6'},
+                         {name:'Pakistan', states :'4'},
+                         {name:'New Zealand', states :'16'},
+                         {name:'United states of America', states :'50'},
+                         {name:'South Africa', states :'9'}]"></div>
+
+<label>Search: <input ng-model="searchText"></label>
+<table id="searchTextResults">
+  <tr><th>Country</th><th>States</th></tr>
+  <tr ng-repeat="friend in friends | filter:searchText">
+    <td>{{friend.name}}</td>
+    <td>{{friend.states}}</td>
+  </tr>
+</table>
